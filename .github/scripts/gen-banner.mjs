@@ -1,7 +1,7 @@
 // Regenerates assets/banner.svg with live GitHub stats.
 // Run by .github/workflows/banner.yml — needs env GITHUB_TOKEN and GH_USER.
 
-import { writeFileSync, readFileSync } from "node:fs";
+import { writeFileSync, readFileSync, mkdirSync } from "node:fs";
 
 const USER = process.env.GH_USER || "nl2992";
 const TOKEN = process.env.GITHUB_TOKEN;
@@ -57,18 +57,33 @@ for (let i = days.length - 1; i >= 0; i--) {
   else break;
 }
 
-// top languages by bytes of code across all repos
+// Top languages, weighted the way GitHub's own "most used languages" card is:
+// the geometric mean of a language's share of bytes and its share of repos.
+// Raw bytes alone lets one .ipynb (megabytes of embedded output) drown everything.
 const langBytes = {};
+const langRepos = {};
 for (const r of u.repositories.nodes) {
+  const seen = new Set();
   for (const e of r.languages?.edges || []) {
-    langBytes[e.node.name] = (langBytes[e.node.name] || 0) + e.size;
+    const n = e.node.name;
+    langBytes[n] = (langBytes[n] || 0) + e.size;
+    if (!seen.has(n)) { langRepos[n] = (langRepos[n] || 0) + 1; seen.add(n); }
   }
 }
+const totalBytes = Object.values(langBytes).reduce((a, b) => a + b, 0) || 1;
+const totalHits = Object.values(langRepos).reduce((a, b) => a + b, 0) || 1;
+const scored = Object.keys(langBytes).map((name) => ({
+  name,
+  bytes: langBytes[name],
+  repos: langRepos[name] || 0,
+  score: Math.sqrt((langBytes[name] / totalBytes) * ((langRepos[name] || 0) / totalHits)),
+}));
+const scoreSum = scored.reduce((a, l) => a + l.score, 0) || 1;
+for (const l of scored) l.share = +((l.score / scoreSum) * 100).toFixed(2);
+scored.sort((a, b) => b.share - a.share);
+
 const rename = { "Jupyter Notebook": "jupyter", "C++": "cpp", "C#": "csharp" };
-const langs = Object.entries(langBytes)
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 5)
-  .map(([n]) => (rename[n] || n).toLowerCase());
+const langs = scored.slice(0, 5).map((l) => (rename[l.name] || l.name).toLowerCase());
 
 const fmt = (n) => n.toLocaleString("en-US");
 
@@ -154,4 +169,19 @@ if (strip(prev) === strip(svg)) {
 } else {
   writeFileSync(PATH, svg);
   console.log("banner updated:", { repos, stars, followers, commits, contribs, streak, langs });
+}
+
+// ---- stats the REST API can't give the browser (contributions, streak, language bytes) ----
+// consumed by docs/index.html; live repo/star/follower counts are fetched client-side.
+const STATS = "docs/stats.json";
+const topLangs = scored.slice(0, 8).map(({ name, bytes, repos, share }) => ({ name, bytes, repos, share }));
+const statsDoc = { contribs, commits, streak, repos, stars, followers, topLangs };
+const prevStats = (() => { try { return JSON.parse(readFileSync(STATS, "utf8")); } catch { return null; } })();
+const same = prevStats && JSON.stringify({ ...prevStats, generated: 0 }) === JSON.stringify({ ...statsDoc, generated: 0 });
+if (same) {
+  console.log("stats.json unchanged");
+} else {
+  mkdirSync("docs", { recursive: true });
+  writeFileSync(STATS, JSON.stringify({ ...statsDoc, generated: new Date().toISOString() }, null, 2) + "\n");
+  console.log("stats.json updated");
 }

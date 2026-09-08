@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nl2992 — zsh</title>
+<meta name="description" content="An interactive terminal for the nl2992 GitHub profile.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d1117'/><text x='6' y='23' font-family='monospace' font-size='18' fill='%2327c93f'>&gt;_</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+<style>
+  :root {
+    --bg: #010409;
+    --term: #0d1117;
+    --bar: #161b22;
+    --line: #30363d;
+    --fg: #c9d1d9;
+    --bright: #e6edf3;
+    --dim: #8b949e;
+    --faint: #6e7681;
+    --green: #27c93f;
+    --green-soft: #7ee787;
+    --cyan: #56d4dd;
+    --red: #ff5f56;
+    --yellow: #ffbd2e;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: 'JetBrains Mono', 'SFMono-Regular', 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+    font-size: 14px;
+    line-height: 1.65;
+    display: flex;
+    padding: clamp(0px, 3vh, 32px) clamp(0px, 3vw, 32px);
+  }
+
+  .term {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    height: min(760px, calc(100vh - 6vh));
+    background: var(--term);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 24px 60px rgba(0,0,0,.55);
+  }
+  .glow {
+    position: absolute; top: -160px; right: -80px;
+    width: 520px; height: 520px; border-radius: 50%;
+    background: radial-gradient(circle, var(--green) 0%, transparent 70%);
+    opacity: .13; pointer-events: none;
+  }
+
+  .bar {
+    flex: none; height: 40px; background: var(--bar);
+    display: flex; align-items: center; padding: 0 16px;
+    position: relative; border-bottom: 1px solid var(--line);
+  }
+  .dots { display: flex; gap: 8px; }
+  .dots span { width: 13px; height: 13px; border-radius: 50%; }
+  .bar .title {
+    position: absolute; left: 0; right: 0; text-align: center;
+    font-size: 12px; color: var(--dim); pointer-events: none;
+  }
+
+  .screen {
+    flex: 1; overflow-y: auto; padding: 20px 22px 8px;
+    scrollbar-width: thin; scrollbar-color: var(--line) transparent;
+  }
+  .screen::-webkit-scrollbar { width: 10px; }
+  .screen::-webkit-scrollbar-thumb { background: var(--line); border-radius: 5px; }
+
+  .row { white-space: pre-wrap; word-break: break-word; }
+  .prompt-line { display: flex; gap: 8px; align-items: baseline; }
+  .ps1 { flex: none; color: var(--green); }
+  .ps1 .cwd { color: var(--cyan); }
+  .cmd { color: var(--bright); }
+
+  .out { padding: 2px 0 12px; }
+  .muted { color: var(--dim); }
+  .faint { color: var(--faint); }
+  .ok { color: var(--green-soft); }
+  .warn { color: var(--yellow); }
+  .err { color: var(--red); }
+  .key { color: var(--green-soft); }
+  .val { color: var(--bright); }
+  a { color: var(--green-soft); text-decoration: none; border-bottom: 1px solid rgba(126,231,135,.35); }
+  a:hover { color: var(--green); }
+
+  .pill {
+    display: inline-block; margin: 0 6px 6px 0; padding: 2px 9px;
+    font-size: 12px; color: var(--green-soft);
+    background: var(--bar); border: 1px solid var(--line); border-radius: 5px;
+  }
+  .bar-chart { color: var(--green); letter-spacing: -1px; }
+
+  /* input line */
+  .input-line { display: flex; gap: 8px; align-items: baseline; padding: 0 22px 20px; }
+  #input {
+    flex: 1; min-width: 0;
+    background: transparent; border: 0; outline: 0; padding: 0;
+    color: var(--bright); caret-color: var(--green);
+    font: inherit; line-height: inherit;
+  }
+  .caret {
+    display: inline-block; width: 8px; height: 15px; background: var(--fg);
+    animation: blink 1.06s steps(1) infinite; vertical-align: -2px;
+  }
+  @keyframes blink { 0%,45% { opacity: 1 } 55%,100% { opacity: 0 } }
+
+  .hint { padding: 0 22px 16px; font-size: 12px; color: var(--faint); }
+  .hint b { color: var(--dim); font-weight: 500; }
+
+  @media (max-width: 640px) {
+    body { padding: 0; font-size: 13px; }
+    .term { height: 100vh; border: 0; border-radius: 0; }
+    .screen { padding: 16px 14px 8px; }
+    .input-line { padding: 0 14px 16px; }
+    .hint { padding: 0 14px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="term" id="term">
+  <div class="glow"></div>
+  <div class="bar">
+    <div class="dots">
+      <span style="background:var(--red)"></span>
+      <span style="background:var(--yellow)"></span>
+      <span style="background:var(--green)"></span>
+    </div>
+    <div class="title">nl2992 — zsh — 120&times;30</div>
+  </div>
+
+  <div class="screen" id="screen"></div>
+
+  <div class="input-line" id="inputLine" hidden>
+    <span class="ps1">➜ <span class="cwd">~</span></span>
+    <input id="input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" aria-label="terminal input">
+  </div>
+  <div class="hint" id="hint" hidden>
+    <b>help</b> for commands · <b>↑↓</b> history · <b>Tab</b> complete · <b>Ctrl+L</b> clear
+  </div>
+</div>
+
+<script>
+const USER = "nl2992";
+const API = "https://api.github.com";
+
+const screenEl = document.getElementById("screen");
+const inputEl  = document.getElementById("input");
+const lineEl   = document.getElementById("inputLine");
+const hintEl   = document.getElementById("hint");
+
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (n) => Number(n).toLocaleString("en-US");
+const pad = (s, n) => String(s).padEnd(n);
+
+function write(html, cls = "") {
+  const d = document.createElement("div");
+  d.className = "out row " + cls;
+  d.innerHTML = html;
+  screenEl.appendChild(d);
+  screenEl.scrollTop = screenEl.scrollHeight;
+  return d;
+}
+function echoCommand(cmd) {
+  const d = document.createElement("div");
+  d.className = "prompt-line row";
+  d.innerHTML = `<span class="ps1">➜ <span class="cwd">~</span></span><span class="cmd">${esc(cmd)}</span>`;
+  screenEl.appendChild(d);
+}
+
+/* ---------- data ---------- */
+const cache = {};
+async function getJSON(url, key) {
+  if (cache[key]) return cache[key];
+  const r = await fetch(url, { headers: { Accept: "application/vnd.github+json" } });
+  if (r.status === 403 || r.status === 429) {
+    const e = new Error("rate-limited");
+    e.rate = true;
+    throw e;
+  }
+  if (!r.ok) throw new Error(`${r.status}`);
+  return (cache[key] = await r.json());
+}
+const getUser  = () => getJSON(`${API}/users/${USER}`, "user");
+const getRepos = () => getJSON(`${API}/users/${USER}/repos?per_page=100&sort=pushed&type=owner`, "repos");
+const getStats = () => getJSON("./stats.json?t=" + Date.now(), "stats");
+
+function rateMsg() {
+  return `<span class="warn">GitHub's unauthenticated API rate limit is exhausted for your network (60 req/hr).</span>\n<span class="faint">It resets within the hour. Cached figures still work: try <span class="key">langs</span> or <span class="key">streak</span>.</span>`;
+}
+
+/* ---------- commands ---------- */
+const commands = {
+  help() {
+    const rows = [
+      ["help",        "this list"],
+      ["whoami",      "the short version"],
+      ["about",       "the longer version"],
+      ["stats",       "live GitHub numbers"],
+      ["repos [n]",   "most recently pushed repositories"],
+      ["langs",       "languages by volume of code"],
+      ["streak",      "contribution streak"],
+      ["open <repo>", "open a repository on GitHub"],
+      ["gh",          "open the GitHub profile"],
+      ["clear",       "clear the screen"],
+    ];
+    return rows.map(([c, d]) =>
+      `  <span class="key">${esc(pad(c, 14))}</span><span class="muted">${esc(d)}</span>`).join("\n");
+  },
+
+  whoami() {
+    return `  <span class="val">nl2992</span> · Nigel Li\n` +
+           `  <span class="muted">Quantitative finance — derivatives, credit, rates, and the risk around them.</span>\n` +
+           `  <span class="faint">Columbia MAFN. Research code, mostly Python and notebooks.</span>`;
+  },
+
+  about() {
+    return [
+      `  Most of what is here is <span class="val">quantitative finance research</span>, written to be reproducible:`,
+      ``,
+      `    <span class="key">·</span> derivatives — volatility surfaces, Fourier option pricing, deep hedging`,
+      `    <span class="key">·</span> credit — CDS and hazard stripping, basket default, credit-linked notes`,
+      `    <span class="key">·</span> rates — SOFR curve builds, DV01-neutral curve mean-reversion`,
+      `    <span class="key">·</span> risk — VaR/ES systems, CVaR-constrained RL allocators`,
+      `    <span class="key">·</span> DeFi — stablecoin contagion, on-chain microstructure, prediction-market arb`,
+      ``,
+      `  Plus a side of browser toys — voxel worlds and arcade shooters in TypeScript.`,
+      ``,
+      `  <span class="faint">Type <span class="key">repos</span> to see what has moved lately.</span>`,
+    ].join("\n");
+  },
+
+  async stats() {
+    const [u, rs, s] = await Promise.all([getUser(), getRepos(), getStats().catch(() => null)]);
+    const stars = rs.filter((r) => !r.fork).reduce((a, r) => a + r.stargazers_count, 0);
+    const sources = rs.filter((r) => !r.fork).length;
+    const forks = u.public_repos - sources;
+    const rows = [
+      ["public repos",  fmt(u.public_repos) + (forks > 0 ? `  <span class="faint">(${fmt(sources)} sources, ${fmt(forks)} forks)</span>` : "")],
+      ["stars earned",  fmt(stars)],
+      ["followers",     fmt(u.followers)],
+    ];
+    if (s) {
+      rows.push(
+        ["contributions", `${fmt(s.contribs)}  <span class="faint">last 12 months</span>`],
+        ["commits",       `${fmt(s.commits)}  <span class="faint">last 12 months</span>`],
+        ["current streak", `${fmt(s.streak)} day${s.streak === 1 ? "" : "s"}`],
+      );
+    }
+    rows.push(["on github since", new Date(u.created_at).toISOString().slice(0, 10)]);
+    const body = rows.map(([k, v]) =>
+      `  <span class="muted">${pad(k, 17)}</span><span class="val">${v}</span>`).join("\n");
+    const note = s
+      ? `\n\n<span class="faint">repos/stars/followers are live; contribution figures refresh every 6h.</span>`
+      : "";
+    return body + note;
+  },
+
+  async repos(args) {
+    const n = Math.min(Math.max(parseInt(args[0], 10) || 10, 1), 40);
+    const rs = (await getRepos()).filter((r) => !r.fork).slice(0, n);
+    return rs.map((r) => {
+      const stars = r.stargazers_count ? `<span class="ok">★${r.stargazers_count}</span>` : `<span class="faint">·</span>`;
+      const lang = r.language ? `<span class="key">${esc(r.language)}</span>` : `<span class="faint">—</span>`;
+      const desc = r.description
+        ? `\n      <span class="faint">${esc(r.description.length > 92 ? r.description.slice(0, 92) + "…" : r.description)}</span>`
+        : "";
+      return `  <a href="${esc(r.html_url)}" target="_blank" rel="noopener">${esc(r.name)}</a>  ` +
+             `${stars}  ${lang}  <span class="faint">${r.pushed_at.slice(0, 10)}</span>${desc}`;
+    }).join("\n") + `\n\n<span class="faint">${rs.length} shown · <span class="key">open &lt;name&gt;</span> to jump to one</span>`;
+  },
+
+  async langs() {
+    const s = await getStats();
+    const top = s.topLangs[0]?.share || 1;
+    return s.topLangs.map((l) => {
+      const bar = "█".repeat(Math.max(1, Math.round((l.share / top) * 28)));
+      return `  <span class="muted">${esc(pad(l.name.toLowerCase(), 18))}</span>` +
+             `<span class="bar-chart">${bar}</span> <span class="val">${l.share.toFixed(1)}%</span>` +
+             `  <span class="faint">${l.repos} repo${l.repos === 1 ? "" : "s"}</span>`;
+    }).join("\n") + `\n\n<span class="faint">share of bytes and share of repos, weighted evenly</span>`;
+  },
+
+  async streak() {
+    const s = await getStats();
+    return `  <span class="muted">${pad("current streak", 17)}</span><span class="val">${fmt(s.streak)} day${s.streak === 1 ? "" : "s"}</span>\n` +
+           `  <span class="muted">${pad("contributions", 17)}</span><span class="val">${fmt(s.contribs)}</span> <span class="faint">last 12 months</span>\n` +
+           `  <span class="muted">${pad("commits", 17)}</span><span class="val">${fmt(s.commits)}</span> <span class="faint">last 12 months</span>`;
+  },
+
+  async open(args) {
+    const name = (args[0] || "").trim();
+    if (!name) return `<span class="err">usage:</span> open &lt;repo&gt;`;
+    const rs = await getRepos();
+    const hit = rs.find((r) => r.name.toLowerCase() === name.toLowerCase())
+             || rs.find((r) => r.name.toLowerCase().includes(name.toLowerCase()));
+    if (!hit) return `<span class="err">no repository matching</span> ${esc(name)}`;
+    window.open(hit.html_url, "_blank", "noopener");
+    return `opening <a href="${esc(hit.html_url)}" target="_blank" rel="noopener">${esc(hit.name)}</a> …`;
+  },
+
+  gh() {
+    window.open(`https://github.com/${USER}`, "_blank", "noopener");
+    return `opening <a href="https://github.com/${USER}" target="_blank" rel="noopener">github.com/${USER}</a> …`;
+  },
+
+  clear() { screenEl.innerHTML = ""; return null; },
+
+  /* small change */
+  ls()   { return `  <span class="key">bio.txt</span>  <span class="key">repos/</span>  <span class="key">stack/</span>  <span class="faint">(try </span><span class="key">repos</span><span class="faint">)</span>`; },
+  pwd()  { return `  /home/${USER}`; },
+  date() { return `  ${new Date().toString()}`; },
+  sudo() { return `  <span class="warn">${USER} is not in the sudoers file. This incident will be reported.</span>`; },
+  exit() { return `  <span class="faint">there is no exit. try <span class="key">gh</span>.</span>`; },
+};
+const ALIASES = { "?": "help", man: "help", cls: "clear", h: "help", "cat": "ls", whois: "whoami", info: "about" };
+
+/* ---------- run loop ---------- */
+async function run(raw) {
+  const line = raw.trim();
+  if (!line) return;
+  const [head, ...args] = line.split(/\s+/);
+  const name = ALIASES[head.toLowerCase()] || head.toLowerCase();
+  const fn = commands[name];
+
+  if (!fn) {
+    write(`<span class="err">zsh: command not found:</span> ${esc(head)}  <span class="faint">— try <span class="key">help</span></span>`);
+    return;
+  }
+  try {
+    const pending = write(`<span class="faint">…</span>`);
+    const res = await fn(args);
+    if (res === null) { pending.remove(); return; }
+    pending.innerHTML = res;
+  } catch (e) {
+    write(e && e.rate ? rateMsg() : `<span class="err">error:</span> ${esc(e.message || e)}`);
+  }
+  screenEl.scrollTop = screenEl.scrollHeight;
+}
+
+/* ---------- history + keys ---------- */
+const history = [];
+let hIdx = -1;
+
+inputEl.addEventListener("keydown", async (e) => {
+  if (e.key === "Enter") {
+    const v = inputEl.value;
+    inputEl.value = "";
+    echoCommand(v);
+    if (v.trim()) { history.push(v); hIdx = history.length; }
+    await run(v);
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    if (hIdx > 0) inputEl.value = history[--hIdx] ?? "";
+  } else if (e.key === "ArrowDown") {
+    e.preventDefault();
+    if (hIdx < history.length - 1) inputEl.value = history[++hIdx] ?? "";
+    else { hIdx = history.length; inputEl.value = ""; }
+  } else if (e.key === "Tab") {
+    e.preventDefault();
+    const v = inputEl.value.trim().toLowerCase();
+    if (!v) return;
+    const hit = Object.keys(commands).find((c) => c.startsWith(v));
+    if (hit) inputEl.value = hit + " ";
+  } else if (e.key === "l" && e.ctrlKey) {
+    e.preventDefault();
+    screenEl.innerHTML = "";
+  }
+});
+
+document.getElementById("term").addEventListener("mousedown", (e) => {
+  if (e.target.tagName !== "A" && !window.getSelection().toString()) {
+    setTimeout(() => inputEl.focus(), 0);
+  }
+});
+
+/* ---------- boot ---------- */
+const BOOT = [
+  { t: `<span class="ps1">➜ <span class="cwd">~</span></span> <span class="cmd">whoami</span>`, d: 260 },
+  { t: null, run: "whoami", d: 220 },
+  { t: `<span class="ps1">➜ <span class="cwd">~</span></span> <span class="cmd">help</span>`, d: 240 },
+  { t: null, run: "help", d: 0 },
+];
+
+(async function boot() {
+  write(`<span class="faint">nl2992 profile shell · type <span class="key">help</span> to begin</span>`);
+  for (const step of BOOT) {
+    await new Promise((r) => setTimeout(r, step.d));
+    if (step.t) { const d = write(""); d.className = "row"; d.innerHTML = step.t; }
+    else write(await commands[step.run]());
+  }
+  lineEl.hidden = false;
+  hintEl.hidden = false;
+  inputEl.focus();
+  screenEl.scrollTop = screenEl.scrollHeight;
+})();
+</script>
+</body>
+</html>

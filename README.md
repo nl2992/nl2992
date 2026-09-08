@@ -1,6 +1,10 @@
 <div align="center">
 
-<img src="./assets/banner.svg" width="100%" alt="nl2992 — data tools, quant experiments, notebooks" />
+<a href="https://nl2992.github.io/nl2992/" title="Open the interactive terminal">
+  <img src="./assets/banner.svg" width="100%" alt="nl2992 — quantitative finance research. Click to open an interactive terminal." />
+</a>
+
+<a href="https://nl2992.github.io/nl2992/"><img src="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" alt="Open the interactive terminal" /></a>
 
 <br/>
 

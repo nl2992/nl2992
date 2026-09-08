@@ -1,0 +1,59 @@
+{
+  "contribs": 4954,
+  "commits": 3878,
+  "streak": 1,
+  "repos": 26,
+  "stars": 187,
+  "followers": 16,
+  "topLangs": [
+    {
+      "name": "Jupyter Notebook",
+      "bytes": 45350632,
+      "repos": 11,
+      "share": 56.29
+    },
+    {
+      "name": "Python",
+      "bytes": 8816681,
+      "repos": 16,
+      "share": 29.94
+    },
+    {
+      "name": "TeX",
+      "bytes": 646109,
+      "repos": 9,
+      "share": 6.08
+    },
+    {
+      "name": "C++",
+      "bytes": 348728,
+      "repos": 2,
+      "share": 2.1
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 145329,
+      "repos": 3,
+      "share": 1.66
+    },
+    {
+      "name": "HTML",
+      "bytes": 60202,
+      "repos": 6,
+      "share": 1.51
+    },
+    {
+      "name": "Makefile",
+      "bytes": 19807,
+      "repos": 5,
+      "share": 0.79
+    },
+    {
+      "name": "MATLAB",
+      "bytes": 22389,
+      "repos": 2,
+      "share": 0.53
+    }
+  ],
+  "generated": "2026-09-08T20:20:01.012Z"
+}
