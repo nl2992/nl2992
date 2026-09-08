@@ -22,7 +22,7 @@
 
 <br/>
 
-<img height="165" src="https://streak-stats.demolab.com?user=nl2992&hide_border=true&card_width=470&background=0D1117&border=30363D&stroke=30363D&ring=27C93F&fire=27C93F&currStreakLabel=7EE787&sideLabels=8B949E&dates=8B949E&sideNums=C9D1D9&currStreakNum=C9D1D9" alt="GitHub streak" />
+<img src="./assets/streak.svg" alt="Contribution streak" />
 
 <br/>
 
