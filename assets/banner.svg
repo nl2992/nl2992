@@ -1,0 +1,58 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
+  <defs>
+    <clipPath id="round"><rect x="1" y="1" width="1198" height="298" rx="12"/></clipPath>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#27c93f"/>
+      <stop offset="100%" stop-color="#27c93f" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="1200" height="300" fill="#0d1117"/>
+    <circle cx="1080" cy="20" r="300" fill="url(#glow)" opacity="0.18"/>
+    <rect width="1200" height="150" fill="url(#scan)"/>
+    <rect width="1200" height="40" fill="#161b22"/>
+    <circle cx="26" cy="20" r="6.5" fill="#ff5f56"/>
+    <circle cx="50" cy="20" r="6.5" fill="#ffbd2e"/>
+    <circle cx="74" cy="20" r="6.5" fill="#27c93f"/>
+    <text x="600" y="25" text-anchor="middle" font-size="13" fill="#8b949e">nl2992 — zsh — 120×30</text>
+  </g>
+
+  <!-- whoami -->
+  <text x="34" y="86" font-size="17">
+    <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">whoami</tspan>
+  </text>
+  <text x="58" y="118" font-size="22" font-weight="700" fill="#e6edf3">nl2992</text>
+
+  <!-- bio -->
+  <text x="34" y="156" font-size="17">
+    <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">cat bio.txt</tspan>
+  </text>
+  <text x="58" y="186" font-size="16" fill="#8b949e">data tools · quant &amp; mean-reversion experiments · perpetual notebook tinkerer</text>
+
+  <!-- stack -->
+  <text x="34" y="224" font-size="17">
+    <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">ls ~/stack</tspan>
+  </text>
+  <g font-size="13" fill="#7ee787">
+    <rect x="58"  y="236" width="66"  height="25" rx="5" fill="#161b22" stroke="#30363d"/><text x="91"  y="253" text-anchor="middle">python</text>
+    <rect x="132" y="236" width="68"  height="25" rx="5" fill="#161b22" stroke="#30363d"/><text x="166" y="253" text-anchor="middle">pandas</text>
+    <rect x="208" y="236" width="96"  height="25" rx="5" fill="#161b22" stroke="#30363d"/><text x="256" y="253" text-anchor="middle">typescript</text>
+    <rect x="312" y="236" width="74"  height="25" rx="5" fill="#161b22" stroke="#30363d"/><text x="349" y="253" text-anchor="middle">jupyter</text>
+    <rect x="394" y="236" width="100" height="25" rx="5" fill="#161b22" stroke="#30363d"/><text x="444" y="253" text-anchor="middle">automation</text>
+  </g>
+
+  <!-- prompt + cursor -->
+  <text x="34" y="290" font-size="17">
+    <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>
+  </text>
+  <rect x="74" y="278" width="9" height="15" fill="#c9d1d9">
+    <animate attributeName="opacity" values="1;1;0;0" dur="1.06s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="1" y="1" width="1198" height="298" rx="12" fill="none" stroke="#30363d" stroke-width="1"/>
+</svg>

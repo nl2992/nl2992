@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap">
+  <style>
+    body { margin: 0; background: #010409; }
+    a { color: #7ee787; } a:hover { color: #56d364; }
+    @keyframes blink { 0%, 45% { opacity: 1; } 55%, 100% { opacity: 0; } }
+    .cursor { display: inline-block; width: 9px; height: 18px; background: #c9d1d9; animation: blink 1.06s steps(1) infinite; vertical-align: -3px; }
+  </style>
+</helmet>
+
+<div style="width: 1200px; height: 300px; box-sizing: border-box; background: #0d1117; border: 1px solid #30363d; border-radius: 12px; overflow: hidden; font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; position: relative;">
+
+  <div style="position: absolute; top: -140px; right: -60px; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, {{accent}} 0%, rgba(0,0,0,0) 70%); opacity: 0.16;"></div>
+
+  <div style="display: flex; align-items: center; height: 40px; padding: 0 16px; background: #161b22; position: relative;">
+    <div style="display: flex; gap: 8px;">
+      <span style="width: 13px; height: 13px; border-radius: 50%; background: #ff5f56;"></span>
+      <span style="width: 13px; height: 13px; border-radius: 50%; background: #ffbd2e;"></span>
+      <span style="width: 13px; height: 13px; border-radius: 50%; background: #27c93f;"></span>
+    </div>
+    <span style="position: absolute; left: 0; right: 0; text-align: center; font-size: 13px; color: #8b949e;">nl2992 — zsh — 120×30</span>
+  </div>
+
+  <div style="padding: 22px 34px; display: flex; flex-direction: column; gap: 13px; position: relative;">
+
+    <div style="font-size: 17px; color: #c9d1d9;">
+      <span style="color: {{accent}};">➜</span>  <span style="color: #56d4dd;">~</span>  whoami
+    </div>
+    <div style="font-size: 22px; font-weight: 700; color: #e6edf3; margin-top: -4px;">nl2992</div>
+
+    <div style="font-size: 17px; color: #c9d1d9;">
+      <span style="color: {{accent}};">➜</span>  <span style="color: #56d4dd;">~</span>  cat bio.txt
+    </div>
+    <div style="font-size: 15px; color: #8b949e; margin-top: -4px;">data tools · quant &amp; mean-reversion experiments · perpetual notebook tinkerer</div>
+
+    <div style="font-size: 17px; color: #c9d1d9;">
+      <span style="color: {{accent}};">➜</span>  <span style="color: #56d4dd;">~</span>  ls ~/stack
+    </div>
+    <div style="display: flex; gap: 8px; margin-top: -2px;">
+      <span style="font-size: 13px; color: {{accent}}; background: #161b22; border: 1px solid #30363d; border-radius: 5px; padding: 4px 10px;">python</span>
+      <span style="font-size: 13px; color: {{accent}}; background: #161b22; border: 1px solid #30363d; border-radius: 5px; padding: 4px 10px;">pandas</span>
+      <span style="font-size: 13px; color: {{accent}}; background: #161b22; border: 1px solid #30363d; border-radius: 5px; padding: 4px 10px;">typescript</span>
+      <span style="font-size: 13px; color: {{accent}}; background: #161b22; border: 1px solid #30363d; border-radius: 5px; padding: 4px 10px;">jupyter</span>
+      <span style="font-size: 13px; color: {{accent}}; background: #161b22; border: 1px solid #30363d; border-radius: 5px; padding: 4px 10px;">automation</span>
+    </div>
+
+    <div style="font-size: 17px; color: #c9d1d9;">
+      <span style="color: {{accent}};">➜</span>  <span style="color: #56d4dd;">~</span>  <span class="cursor"></span>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script data-dc-script data-props='{"accent":{"editor":"color","default":"#27c93f","options":["#27c93f","#56d4dd","#a371f7","#f778ba"]}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.accent ?? '#27c93f' };
+  }
+  static get $preview() { return { width: 1200, height: 300 }; }
+}
+</script>
+</body>
+</html>
