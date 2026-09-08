@@ -45,10 +45,12 @@ const followers = u.followers.totalCount;
 const commits = u.contributionsCollection.totalCommitContributions;
 const contribs = u.contributionsCollection.contributionCalendar.totalContributions;
 
-// current streak: consecutive days up to today with >0 contributions (today's 0 doesn't break it)
+// Current streak: consecutive days with >0 contributions, counting back from the end.
+// A still-empty today doesn't break it.
+// The calendar already ends at the user's own "today", so don't second-guess it with the
+// runner's UTC clock — that drifts a day whenever the two timezones straddle midnight.
 const days = u.contributionsCollection.contributionCalendar.weeks
   .flatMap((w) => w.contributionDays)
-  .filter((d) => d.date <= new Date().toISOString().slice(0, 10))
   .sort((a, b) => a.date.localeCompare(b.date));
 let streak = 0;
 for (let i = days.length - 1; i >= 0; i--) {

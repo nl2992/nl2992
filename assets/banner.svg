@@ -28,13 +28,13 @@
     <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">whoami</tspan>
   </text>
   <text x="58" y="108" font-size="21" font-weight="700" fill="#e6edf3">nl2992</text>
-  <text x="58" y="130" font-size="12" fill="#6e7681">26 repos · 187 stars · 16 followers</text>
+  <text x="58" y="130" font-size="12" fill="#6e7681">26 repos · 188 stars · 16 followers</text>
 
   <!-- stats -->
   <text x="34" y="164" font-size="17">
     <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">gh-stats --since=1y</tspan>
   </text>
-  <text x="58" y="192" font-size="14" fill="#8b949e">4,955 contributions · 3,879 commits · 2-day streak</text>
+  <text x="58" y="192" font-size="14" fill="#8b949e">4,958 contributions · 3,879 commits · 2-day streak</text>
 
   <!-- stack -->
   <text x="34" y="224" font-size="17">

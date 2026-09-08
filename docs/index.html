@@ -264,7 +264,9 @@ const commands = {
     const body = rows.map(([k, v]) =>
       `  <span class="muted">${pad(k, 17)}</span><span class="val">${v}</span>`).join("\n");
     const note = s
-      ? `\n\n<span class="faint">repos/stars/followers are live; contribution figures refresh every 6h.</span>`
+      ? `\n\n<span class="faint">repos/stars/followers are live; contribution figures refresh hourly` +
+        (s.generated ? ` <span class="faint">(last: ${esc(s.generated.slice(0, 16).replace("T", " "))}Z)</span>` : "") +
+        `.</span>`
       : "";
     return body + note;
   },
