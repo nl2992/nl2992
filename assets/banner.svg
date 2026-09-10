@@ -1,5 +1,5 @@
 <svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
-  <!-- generated 2026-09-08 by .github/scripts/gen-banner.mjs -->
+  <!-- generated 2026-09-10 by .github/scripts/gen-banner.mjs -->
   <defs>
     <clipPath id="round"><rect x="1" y="1" width="1198" height="298" rx="12"/></clipPath>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
@@ -34,7 +34,7 @@
   <text x="34" y="164" font-size="17">
     <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">gh-stats --since=1y</tspan>
   </text>
-  <text x="58" y="192" font-size="14" fill="#8b949e">4,960 contributions · 3,881 commits · 2-day streak</text>
+  <text x="58" y="192" font-size="14" fill="#8b949e">4,960 contributions · 3,881 commits · 0-day streak</text>
 
   <!-- stack -->
   <text x="34" y="224" font-size="17">
