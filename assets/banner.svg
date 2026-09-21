@@ -34,13 +34,13 @@
   <text x="34" y="164" font-size="17">
     <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">gh-stats --since=1y</tspan>
   </text>
-  <text x="58" y="192" font-size="14" fill="#8b949e">5,065 contributions · 3,939 commits · 4-day streak</text>
+  <text x="58" y="192" font-size="14" fill="#8b949e">5,069 contributions · 3,942 commits · 4-day streak</text>
 
   <!-- stack -->
   <text x="34" y="224" font-size="17">
     <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">ls ~/stack</tspan>
   </text>
-  <g font-size="13" fill="#7ee787"><rect x="58" y="230" width="77" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="96.5" y="246" text-anchor="middle">jupyter</text><rect x="143" y="230" width="69" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="177.5" y="246" text-anchor="middle">python</text><rect x="220" y="230" width="45" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="242.5" y="246" text-anchor="middle">tex</text><rect x="273" y="230" width="45" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="295.5" y="246" text-anchor="middle">cpp</text><rect x="326" y="230" width="53" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="352.5" y="246" text-anchor="middle">html</text></g>
+  <g font-size="13" fill="#7ee787"><rect x="58" y="230" width="77" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="96.5" y="246" text-anchor="middle">jupyter</text><rect x="143" y="230" width="69" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="177.5" y="246" text-anchor="middle">python</text><rect x="220" y="230" width="45" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="242.5" y="246" text-anchor="middle">tex</text><rect x="273" y="230" width="53" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="299.5" y="246" text-anchor="middle">html</text><rect x="334" y="230" width="45" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="356.5" y="246" text-anchor="middle">cpp</text></g>
 
   <!-- prompt + cursor -->
   <text x="34" y="288" font-size="17">
