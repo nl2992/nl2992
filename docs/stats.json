@@ -1,59 +1,59 @@
 {
-  "contribs": 5074,
-  "commits": 3945,
-  "streak": 5,
-  "repos": 26,
+  "contribs": 5081,
+  "commits": 3951,
+  "streak": 6,
+  "repos": 27,
   "stars": 188,
   "followers": 17,
   "topLangs": [
     {
       "name": "Jupyter Notebook",
-      "bytes": 45350632,
-      "repos": 11,
-      "share": 54.04
+      "bytes": 50696794,
+      "repos": 12,
+      "share": 52.13
     },
     {
       "name": "Python",
-      "bytes": 9953133,
+      "bytes": 9955002,
       "repos": 16,
-      "share": 30.53
+      "share": 26.67
+    },
+    {
+      "name": "HTML",
+      "bytes": 2580789,
+      "repos": 8,
+      "share": 9.6
     },
     {
       "name": "TeX",
       "bytes": 646109,
       "repos": 9,
-      "share": 5.83
-    },
-    {
-      "name": "HTML",
-      "bytes": 113723,
-      "repos": 7,
-      "share": 2.16
+      "share": 5.1
     },
     {
       "name": "C++",
       "bytes": 348728,
       "repos": 2,
-      "share": 2.02
+      "share": 1.77
     },
     {
       "name": "TypeScript",
       "bytes": 145329,
       "repos": 3,
-      "share": 1.6
+      "share": 1.4
     },
     {
       "name": "JavaScript",
       "bytes": 94618,
       "repos": 2,
-      "share": 1.05
+      "share": 0.92
     },
     {
       "name": "Makefile",
       "bytes": 19807,
       "repos": 5,
-      "share": 0.76
+      "share": 0.67
     }
   ],
-  "generated": "2026-09-22T18:58:39.048Z"
+  "generated": "2026-09-23T06:04:07.256Z"
 }

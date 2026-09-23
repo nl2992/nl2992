@@ -1,5 +1,5 @@
 <svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
-  <!-- generated 2026-09-22 by .github/scripts/gen-banner.mjs -->
+  <!-- generated 2026-09-23 by .github/scripts/gen-banner.mjs -->
   <defs>
     <clipPath id="round"><rect x="1" y="1" width="1198" height="298" rx="12"/></clipPath>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
@@ -28,19 +28,19 @@
     <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">whoami</tspan>
   </text>
   <text x="58" y="108" font-size="21" font-weight="700" fill="#e6edf3">nl2992</text>
-  <text x="58" y="130" font-size="12" fill="#6e7681">26 repos · 188 stars · 17 followers</text>
+  <text x="58" y="130" font-size="12" fill="#6e7681">27 repos · 188 stars · 17 followers</text>
 
   <!-- stats -->
   <text x="34" y="164" font-size="17">
     <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">gh-stats --since=1y</tspan>
   </text>
-  <text x="58" y="192" font-size="14" fill="#8b949e">5,074 contributions · 3,945 commits · 5-day streak</text>
+  <text x="58" y="192" font-size="14" fill="#8b949e">5,081 contributions · 3,951 commits · 6-day streak</text>
 
   <!-- stack -->
   <text x="34" y="224" font-size="17">
     <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">ls ~/stack</tspan>
   </text>
-  <g font-size="13" fill="#7ee787"><rect x="58" y="230" width="77" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="96.5" y="246" text-anchor="middle">jupyter</text><rect x="143" y="230" width="69" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="177.5" y="246" text-anchor="middle">python</text><rect x="220" y="230" width="45" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="242.5" y="246" text-anchor="middle">tex</text><rect x="273" y="230" width="53" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="299.5" y="246" text-anchor="middle">html</text><rect x="334" y="230" width="45" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="356.5" y="246" text-anchor="middle">cpp</text></g>
+  <g font-size="13" fill="#7ee787"><rect x="58" y="230" width="77" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="96.5" y="246" text-anchor="middle">jupyter</text><rect x="143" y="230" width="69" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="177.5" y="246" text-anchor="middle">python</text><rect x="220" y="230" width="53" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="246.5" y="246" text-anchor="middle">html</text><rect x="281" y="230" width="45" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="303.5" y="246" text-anchor="middle">tex</text><rect x="334" y="230" width="45" height="24" rx="5" fill="#161b22" stroke="#30363d"/><text x="356.5" y="246" text-anchor="middle">cpp</text></g>
 
   <!-- prompt + cursor -->
   <text x="34" y="288" font-size="17">
