@@ -1,6 +1,6 @@
 {
-  "contribs": 5121,
-  "commits": 3981,
+  "contribs": 5123,
+  "commits": 3983,
   "streak": 2,
   "repos": 27,
   "stars": 188,
@@ -14,9 +14,9 @@
     },
     {
       "name": "Python",
-      "bytes": 10127481,
+      "bytes": 10129974,
       "repos": 16,
-      "share": 26.67
+      "share": 26.68
     },
     {
       "name": "HTML",
@@ -26,9 +26,9 @@
     },
     {
       "name": "TeX",
-      "bytes": 646109,
-      "repos": 9,
-      "share": 5.05
+      "bytes": 635107,
+      "repos": 8,
+      "share": 4.72
     },
     {
       "name": "C++",
@@ -44,16 +44,16 @@
     },
     {
       "name": "JavaScript",
-      "bytes": 99927,
+      "bytes": 100075,
       "repos": 3,
       "share": 1.15
     },
     {
-      "name": "Makefile",
-      "bytes": 19807,
+      "name": "Shell",
+      "bytes": 21068,
       "repos": 5,
-      "share": 0.66
+      "share": 0.68
     }
   ],
-  "generated": "2026-09-27T08:19:00.241Z"
+  "generated": "2026-09-27T19:01:50.520Z"
 }
