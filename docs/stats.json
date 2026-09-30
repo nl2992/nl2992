@@ -1,5 +1,5 @@
 {
-  "contribs": 5211,
+  "contribs": 5223,
   "commits": 3978,
   "streak": 5,
   "repos": 27,
@@ -10,25 +10,25 @@
       "name": "Jupyter Notebook",
       "bytes": 51321988,
       "repos": 12,
-      "share": 51.85
+      "share": 51.6
     },
     {
       "name": "Python",
       "bytes": 10138275,
       "repos": 16,
-      "share": 26.61
+      "share": 26.48
     },
     {
       "name": "HTML",
       "bytes": 2632945,
       "repos": 8,
-      "share": 9.59
+      "share": 9.54
     },
     {
       "name": "TeX",
-      "bytes": 635107,
-      "repos": 8,
-      "share": 4.71
+      "bytes": 666094,
+      "repos": 9,
+      "share": 5.09
     },
     {
       "name": "C++",
@@ -40,20 +40,20 @@
       "name": "TypeScript",
       "bytes": 145329,
       "repos": 3,
-      "share": 1.38
+      "share": 1.37
     },
     {
       "name": "JavaScript",
       "bytes": 135065,
       "repos": 3,
-      "share": 1.33
+      "share": 1.32
     },
     {
-      "name": "Shell",
-      "bytes": 21068,
-      "repos": 5,
-      "share": 0.68
+      "name": "Makefile",
+      "bytes": 20456,
+      "repos": 6,
+      "share": 0.73
     }
   ],
-  "generated": "2026-09-30T15:58:03.231Z"
+  "generated": "2026-09-30T20:51:30.853Z"
 }
