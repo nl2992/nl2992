@@ -51,7 +51,6 @@ Away from the keyboard: skiing and cooking.
 
 <br/>
 
-<img src="https://komarev.com/ghpvc/?username=nl2992&color=27c93f&style=flat-square&label=profile+views" alt="Profile views" />
-<img src="https://hit.yhype.me/github/profile?user_id=65812354" alt="" />
+<img src="https://visitor-badge.laobi.icu/badge?page_id=nl2992.nl2992&left_text=profile%20views&left_color=0d1117&right_color=27c93f" alt="Profile views" />
 
 </div>
