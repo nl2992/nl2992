@@ -223,21 +223,21 @@ const commands = {
 
   whoami() {
     return `  <span class="val">nl2992</span> · Nigel Li\n` +
-           `  <span class="muted">Quantitative finance — derivatives, credit, rates, and the risk around them.</span>\n` +
-           `  <span class="faint">Columbia MAFN. Research code, mostly Python and notebooks.</span>`;
+           `  <span class="muted">Math student at Columbia. Quant finance, mostly.</span>\n` +
+           `  <span class="faint">15th IAQF winner. Paper accepted at ICAIF 2026. Skis, cooks.</span>`;
   },
 
   about() {
     return [
       `  Most of what is here is <span class="val">quantitative finance research</span>, written to be reproducible:`,
       ``,
-      `    <span class="key">·</span> derivatives — volatility surfaces, Fourier option pricing, deep hedging`,
-      `    <span class="key">·</span> credit — CDS and hazard stripping, basket default, credit-linked notes`,
-      `    <span class="key">·</span> rates — SOFR curve builds, DV01-neutral curve mean-reversion`,
-      `    <span class="key">·</span> risk — VaR/ES systems, CVaR-constrained RL allocators`,
-      `    <span class="key">·</span> DeFi — stablecoin contagion, on-chain microstructure, prediction-market arb`,
+      `    <span class="key">·</span> derivatives: volatility surfaces, Fourier option pricing, deep hedging`,
+      `    <span class="key">·</span> credit: CDS and hazard stripping, basket default, credit-linked notes`,
+      `    <span class="key">·</span> rates: SOFR curve builds, DV01-neutral curve mean-reversion`,
+      `    <span class="key">·</span> risk: VaR/ES systems, CVaR-constrained RL allocators`,
+      `    <span class="key">·</span> DeFi: stablecoin contagion, on-chain microstructure, prediction-market arb`,
       ``,
-      `  Plus a side of browser toys — voxel worlds and arcade shooters in TypeScript.`,
+      `  Plus a side of browser toys: voxel worlds and arcade shooters in TypeScript.`,
       ``,
       `  <span class="faint">Type <span class="key">repos</span> to see what has moved lately.</span>`,
     ].join("\n");
@@ -339,7 +339,7 @@ async function run(raw) {
   const fn = commands[name];
 
   if (!fn) {
-    write(`<span class="err">zsh: command not found:</span> ${esc(head)}  <span class="faint">— try <span class="key">help</span></span>`);
+    write(`<span class="err">zsh: command not found:</span> ${esc(head)}  <span class="faint">try <span class="key">help</span></span>`);
     return;
   }
   try {
