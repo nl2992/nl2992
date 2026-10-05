@@ -17,10 +17,9 @@ Before this it was CS and Commerce at UNSW in Sydney, plus three and a half year
 Casual Academic teaching econometrics and micro (ECON2206, ECON1101, COMM1100) to rooms
 that mainly wanted to know if it was on the exam. Still teaching, now MATH GR5300 here.
 
-Desk time: HSBC Global Markets in Hong Kong, plus Challenger Investment Management and
-Wellington Management in Sydney. At Wellington I was wiring up retrieval pipelines and
-agents over the internal research archive back when that was still filed under "data
-project" rather than AI.
+Desk time: HSBC Global Markets in Hong Kong, plus Challenger Investment Management,
+Wellington Management and Ernst & Young in Sydney. At EY I was building multi-agent
+systems back when that was still filed under "data project" rather than AI.
 
 This year my team won the 15th IAQF Student Affiliate Competition, and a paper on
 CVaR-constrained RL got into ICAIF 2026. Right now I'm building a Fourier option pricer,
