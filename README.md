@@ -51,6 +51,5 @@ Away from the keyboard: skiing and cooking.
 
 <br/>
 
-<img src="https://visitor-badge.laobi.icu/badge?page_id=nl2992.nl2992&left_text=profile%20views&left_color=0d1117&right_color=27c93f" alt="Profile views" />
 
 </div>
