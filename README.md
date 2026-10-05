@@ -12,6 +12,10 @@
 
 Math student at Columbia. I like experimenting with new things and seeing where they end up.
 
+Before this I did a double degree in Computer Science and Commerce at UNSW in Australia,
+and taught there as a Casual Academic for three and a half years, mostly econometrics and
+microeconomics (ECON2206, ECON1101, COMM1100). These days I TA MATH GR5300 at Columbia.
+
 We won the 15th IAQF Student Affiliate Competition, and my paper on CVaR-constrained RL
 portfolio allocation got accepted into ICAIF 2026. Right now I'm building out a Fourier
 option pricer.
