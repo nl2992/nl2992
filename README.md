@@ -56,6 +56,5 @@ Away from the keyboard: skiing and cooking.
 <br/>
 
 <img src="https://hits.sh/github.com/nl2992.svg?style=flat-square&color=27c93f&labelColor=0d1117&label=profile%20views" alt="Profile views" />
-<img src="https://hit.yhype.me/github/profile?user_id=65812354" alt="" />
 
 </div>
