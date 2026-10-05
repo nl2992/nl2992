@@ -10,8 +10,8 @@
 
 ### Hey, I'm Nigel
 
-Math at Columbia. At any given moment I'm either trying to get something to work or on
-my way to trying to get something to work. There is no third state.
+Math at Columbia. Most days I'm either three hours into getting something to work or
+three minutes from breaking it again.
 
 Before this it was CS and Commerce at UNSW in Sydney, plus three and a half years as a
 Casual Academic teaching econometrics and micro (ECON2206, ECON1101, COMM1100) to rooms
