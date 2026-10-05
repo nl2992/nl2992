@@ -10,21 +10,18 @@
 
 ### Hey, I'm Nigel
 
-Math student at Columbia. I like experimenting with new things and seeing where they end up.
+Math at Columbia. I spend most of my time getting models to behave and the rest finding
+out which assumption I quietly broke.
 
-Before this I did a double degree in Computer Science and Commerce at UNSW in Australia,
-and taught there as a Casual Academic for three and a half years, mostly econometrics and
-microeconomics (ECON2206, ECON1101, COMM1100). These days I TA MATH GR5300 at Columbia.
+Before this it was CS and Commerce at UNSW in Sydney, plus three and a half years as a
+Casual Academic teaching econometrics and micro (ECON2206, ECON1101, COMM1100) to rooms
+that mainly wanted to know if it was on the exam. Still teaching, now MATH GR5300 here.
 
-We won the 15th IAQF Student Affiliate Competition, and my paper on CVaR-constrained RL
-portfolio allocation got accepted into ICAIF 2026. Right now I'm building out a Fourier
-option pricer.
+This year my team won the 15th IAQF Student Affiliate Competition, and a paper on
+CVaR-constrained RL got into ICAIF 2026. Right now I'm building a Fourier option pricer,
+mostly because pricing things with integrals never stops being satisfying.
 
-Away from the keyboard: skiing and cooking.
-
-<a href="https://github.com/nl2992/ICAIF_cvar-rl-portfolio-allocator"><img src="https://img.shields.io/badge/ICAIF_2026-paper_accepted-27c93f?style=flat-square&labelColor=0d1117" alt="Paper accepted at ICAIF 2026" /></a>
-<a href="https://iaqf.org/resources/Documents/2026%20Student%20Competition/The%20IAQF%20Announces%20the%20Winners%20of%20the%20Fifteenth%20Annual%20IAQF%20Academic%20Affiliate%20Membership%20Student%20Competition%202026.pdf"><img src="https://img.shields.io/badge/15th_IAQF-competition_winner-27c93f?style=flat-square&labelColor=0d1117" alt="Winner, 15th IAQF Student Affiliate Competition" /></a>
-<a href="https://github.com/nl2992/fourier-option-pricer"><img src="https://img.shields.io/badge/building-fourier_option_pricer-7ee787?style=flat-square&labelColor=0d1117" alt="Building the Fourier option pricer" /></a>
+Otherwise: on a mountain, or in the kitchen.
 
 <br/>
 
