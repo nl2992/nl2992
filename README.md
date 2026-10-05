@@ -23,7 +23,7 @@ option pricer.
 Away from the keyboard: skiing and cooking.
 
 <a href="https://github.com/nl2992/ICAIF_cvar-rl-portfolio-allocator"><img src="https://img.shields.io/badge/ICAIF_2026-paper_accepted-27c93f?style=flat-square&labelColor=0d1117" alt="Paper accepted at ICAIF 2026" /></a>
-<a href="https://github.com/nl2992/IAQF-2026-Submission"><img src="https://img.shields.io/badge/15th_IAQF-competition_winner-27c93f?style=flat-square&labelColor=0d1117" alt="Winner, 15th IAQF Student Affiliate Competition" /></a>
+<a href="https://iaqf.org/resources/Documents/2026%20Student%20Competition/The%20IAQF%20Announces%20the%20Winners%20of%20the%20Fifteenth%20Annual%20IAQF%20Academic%20Affiliate%20Membership%20Student%20Competition%202026.pdf"><img src="https://img.shields.io/badge/15th_IAQF-competition_winner-27c93f?style=flat-square&labelColor=0d1117" alt="Winner, 15th IAQF Student Affiliate Competition" /></a>
 <a href="https://github.com/nl2992/fourier-option-pricer"><img src="https://img.shields.io/badge/building-fourier_option_pricer-7ee787?style=flat-square&labelColor=0d1117" alt="Building the Fourier option pricer" /></a>
 
 <br/>
