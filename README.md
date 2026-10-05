@@ -8,6 +8,20 @@
 
 <br/>
 
+### Nigel Li
+
+Quantitative researcher — derivatives, credit, rates, and the risk underneath them.
+Columbia MAFN. Research code, written to be reproducible.
+
+<a href="https://github.com/nl2992/ICAIF_cvar-rl-portfolio-allocator"><img src="https://img.shields.io/badge/ICAIF_2026-accepted-27c93f?style=flat-square&labelColor=0d1117" alt="Accepted at ICAIF 2026" /></a>
+<a href="https://github.com/nl2992/IAQF-2026-Submission"><img src="https://img.shields.io/badge/IAQF_2026-winner-27c93f?style=flat-square&labelColor=0d1117" alt="Winner, IAQF 2026 Student Competition" /></a>
+
+**Accepted, ICAIF 2026** — differentiable CVaR-constrained RL portfolio allocation, and two failure modes in how constrained RL gets evaluated for finance.
+
+**Winner, IAQF 2026 Student Competition** — stablecoin market fragmentation through the March 2023 USDC de-peg.
+
+<br/>
+
 <img src="https://img.shields.io/badge/Python-0d1117?style=flat-square&logo=python&logoColor=7ee787" alt="Python" />
 <img src="https://img.shields.io/badge/Jupyter-0d1117?style=flat-square&logo=jupyter&logoColor=7ee787" alt="Jupyter" />
 <img src="https://img.shields.io/badge/pandas-0d1117?style=flat-square&logo=pandas&logoColor=7ee787" alt="pandas" />
