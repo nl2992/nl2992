@@ -8,11 +8,13 @@
   </picture>
 </a>
 
-<a href="https://nl2992.github.io/nl2992/"><picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-1a7f37?style=flat-square&labelColor=f6f8fa" />
-  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" />
-  <img src="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" alt="Open the interactive terminal" />
-</picture></a>
+<a href="https://nl2992.github.io/nl2992/">
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-1a7f37?style=flat-square&labelColor=f6f8fa" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" />
+    <img src="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" alt="Open the interactive terminal" />
+  </picture>
+</a>
 
 <br/>
 
