@@ -8,7 +8,11 @@
   </picture>
 </a>
 
-<a href="https://nl2992.github.io/nl2992/"><img src="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" alt="Open the interactive terminal" /></a>
+<a href="https://nl2992.github.io/nl2992/"><picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-1a7f37?style=flat-square&labelColor=f6f8fa" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" />
+  <img src="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" alt="Open the interactive terminal" />
+</picture></a>
 
 <br/>
 
@@ -33,13 +37,41 @@ Otherwise: on a mountain, or in the kitchen.
 
 <br/>
 
-<img src="https://img.shields.io/badge/Python-0d1117?style=flat-square&logo=python&logoColor=7ee787" alt="Python" />
-<img src="https://img.shields.io/badge/Jupyter-0d1117?style=flat-square&logo=jupyter&logoColor=7ee787" alt="Jupyter" />
-<img src="https://img.shields.io/badge/pandas-0d1117?style=flat-square&logo=pandas&logoColor=7ee787" alt="pandas" />
-<img src="https://img.shields.io/badge/NumPy-0d1117?style=flat-square&logo=numpy&logoColor=7ee787" alt="NumPy" />
-<img src="https://img.shields.io/badge/TypeScript-0d1117?style=flat-square&logo=typescript&logoColor=7ee787" alt="TypeScript" />
-<img src="https://img.shields.io/badge/LaTeX-0d1117?style=flat-square&logo=latex&logoColor=7ee787" alt="LaTeX" />
-<img src="https://img.shields.io/badge/Git-0d1117?style=flat-square&logo=git&logoColor=7ee787" alt="Git" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Python-f6f8fa?style=flat-square&logo=python&logoColor=1a7f37" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Python-0d1117?style=flat-square&logo=python&logoColor=7ee787" />
+  <img src="https://img.shields.io/badge/Python-0d1117?style=flat-square&logo=python&logoColor=7ee787" alt="Python" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Jupyter-f6f8fa?style=flat-square&logo=jupyter&logoColor=1a7f37" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Jupyter-0d1117?style=flat-square&logo=jupyter&logoColor=7ee787" />
+  <img src="https://img.shields.io/badge/Jupyter-0d1117?style=flat-square&logo=jupyter&logoColor=7ee787" alt="Jupyter" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/pandas-f6f8fa?style=flat-square&logo=pandas&logoColor=1a7f37" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/pandas-0d1117?style=flat-square&logo=pandas&logoColor=7ee787" />
+  <img src="https://img.shields.io/badge/pandas-0d1117?style=flat-square&logo=pandas&logoColor=7ee787" alt="pandas" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/NumPy-f6f8fa?style=flat-square&logo=numpy&logoColor=1a7f37" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/NumPy-0d1117?style=flat-square&logo=numpy&logoColor=7ee787" />
+  <img src="https://img.shields.io/badge/NumPy-0d1117?style=flat-square&logo=numpy&logoColor=7ee787" alt="NumPy" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/TypeScript-f6f8fa?style=flat-square&logo=typescript&logoColor=1a7f37" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/TypeScript-0d1117?style=flat-square&logo=typescript&logoColor=7ee787" />
+  <img src="https://img.shields.io/badge/TypeScript-0d1117?style=flat-square&logo=typescript&logoColor=7ee787" alt="TypeScript" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/LaTeX-f6f8fa?style=flat-square&logo=latex&logoColor=1a7f37" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/LaTeX-0d1117?style=flat-square&logo=latex&logoColor=7ee787" />
+  <img src="https://img.shields.io/badge/LaTeX-0d1117?style=flat-square&logo=latex&logoColor=7ee787" alt="LaTeX" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://img.shields.io/badge/Git-f6f8fa?style=flat-square&logo=git&logoColor=1a7f37" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://img.shields.io/badge/Git-0d1117?style=flat-square&logo=git&logoColor=7ee787" />
+  <img src="https://img.shields.io/badge/Git-0d1117?style=flat-square&logo=git&logoColor=7ee787" alt="Git" />
+</picture>
 
 <br/>
 
@@ -73,6 +105,10 @@ Otherwise: on a mountain, or in the kitchen.
 
 <br/>
 
-<img src="https://hits.sh/github.com/nl2992.svg?style=flat-square&color=27c93f&labelColor=0d1117&label=profile%20views" alt="Profile views" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://hits.sh/github.com/nl2992.svg?style=flat-square&color=1a7f37&labelColor=f6f8fa&label=profile%20views" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://hits.sh/github.com/nl2992.svg?style=flat-square&color=27c93f&labelColor=0d1117&label=profile%20views" />
+  <img src="https://hits.sh/github.com/nl2992.svg?style=flat-square&color=27c93f&labelColor=0d1117&label=profile%20views" alt="Profile views" />
+</picture>
 
 </div>
