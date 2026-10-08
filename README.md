@@ -44,8 +44,8 @@ Otherwise: on a mountain, or in the kitchen.
 <br/>
 
 <picture>
-  <source media="(prefers-color-scheme: light)" srcset="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues,contribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=default&hide_border=true" />
-  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues,contribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=github_dark&hide_border=true" />
+  <source media="(prefers-color-scheme: light)" srcset="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues%2Ccontribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=default&hide_border=true" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues%2Ccontribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=github_dark&hide_border=true" />
   <img height="155" src="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues,contribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=github_dark&hide_border=true" alt="GitHub statistics" />
 </picture>
 <picture>
