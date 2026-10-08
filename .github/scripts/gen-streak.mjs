@@ -82,40 +82,50 @@ const firstDay = days.find((d) => d.count > 0)?.date || createdAt.slice(0, 10);
 const W = 470, H = 180;
 const cols = [78, 235, 392];
 
-const svg = `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
+// Two palettes, swapped by <picture> + prefers-color-scheme in the README.
+const THEMES = {
+  dark:  { file: "assets/streak.svg",       bg: "#0d1117", line: "#30363d",
+           num: "#c9d1d9", label: "#8b949e", faint: "#6e7681", green: "#27c93f", flameHole: "#0d1117" },
+  light: { file: "assets/streak-light.svg", bg: "#ffffff", line: "#d0d7de",
+           num: "#1f2328", label: "#656d76", faint: "#8c959f", green: "#1a7f37", flameHole: "#ffffff" },
+};
+
+function buildSVG(t) {
+  return `<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
   <!-- generated ${new Date().toISOString().slice(0, 10)} by .github/scripts/gen-streak.mjs -->
-  <rect width="${W}" height="${H}" fill="#0d1117" rx="6"/>
-  <line x1="157" y1="34" x2="157" y2="150" stroke="#30363d" stroke-width="1"/>
-  <line x1="313" y1="34" x2="313" y2="150" stroke="#30363d" stroke-width="1"/>
+  <rect width="${W}" height="${H}" fill="${t.bg}" rx="6"/>
+  <line x1="157" y1="34" x2="157" y2="150" stroke="${t.line}" stroke-width="1"/>
+  <line x1="313" y1="34" x2="313" y2="150" stroke="${t.line}" stroke-width="1"/>
 
   <!-- total contributions -->
-  <text x="${cols[0]}" y="80" text-anchor="middle" font-size="30" font-weight="700" fill="#c9d1d9">${fmt(total)}</text>
-  <text x="${cols[0]}" y="106" text-anchor="middle" font-size="12" fill="#8b949e">Total Contributions</text>
-  <text x="${cols[0]}" y="127" text-anchor="middle" font-size="10" fill="#6e7681">${nice(firstDay)} - Present</text>
+  <text x="${cols[0]}" y="80" text-anchor="middle" font-size="30" font-weight="700" fill="${t.num}">${fmt(total)}</text>
+  <text x="${cols[0]}" y="106" text-anchor="middle" font-size="12" fill="${t.label}">Total Contributions</text>
+  <text x="${cols[0]}" y="127" text-anchor="middle" font-size="10" fill="${t.faint}">${nice(firstDay)} - Present</text>
 
   <!-- current streak -->
   <g transform="translate(${cols[1] - 9}, 10) scale(0.75)">
-    <path d="M12 23c-4.4 0-8-3.4-8-7.7 0-3.5 2-6.3 4-8.9.9-1.1 1.7-2.3 2.1-3.6.5 1.7 1.4 3 2.6 4.2 2.1 2.1 3.9 4.6 3.9 8.3 0 4.3-3.6 7.7-8 7.7z" fill="#27c93f"/>
-    <path d="M12 23c-2.2 0-4-1.7-4-3.9 0-1.7 1-3 2-4.3.5-.6.9-1.2 1.1-1.8.3.9.8 1.5 1.4 2.1 1 1 1.9 2.3 1.9 4.1 0 2.1-1.8 3.8-4 3.8z" fill="#0d1117" opacity=".55"/>
+    <path d="M12 23c-4.4 0-8-3.4-8-7.7 0-3.5 2-6.3 4-8.9.9-1.1 1.7-2.3 2.1-3.6.5 1.7 1.4 3 2.6 4.2 2.1 2.1 3.9 4.6 3.9 8.3 0 4.3-3.6 7.7-8 7.7z" fill="${t.green}"/>
+    <path d="M12 23c-2.2 0-4-1.7-4-3.9 0-1.7 1-3 2-4.3.5-.6.9-1.2 1.1-1.8.3.9.8 1.5 1.4 2.1 1 1 1.9 2.3 1.9 4.1 0 2.1-1.8 3.8-4 3.8z" fill="${t.flameHole}" opacity=".55"/>
   </g>
-  <circle cx="${cols[1]}" cy="72" r="34" fill="none" stroke="#27c93f" stroke-width="4.5"/>
-  <text x="${cols[1]}" y="82" text-anchor="middle" font-size="26" font-weight="700" fill="#c9d1d9">${fmt(cur)}</text>
-  <text x="${cols[1]}" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="#27c93f">Current Streak</text>
-  <text x="${cols[1]}" y="148" text-anchor="middle" font-size="10" fill="#6e7681">${range(curFrom, curTo)}</text>
+  <circle cx="${cols[1]}" cy="72" r="34" fill="none" stroke="${t.green}" stroke-width="4.5"/>
+  <text x="${cols[1]}" y="82" text-anchor="middle" font-size="26" font-weight="700" fill="${t.num}">${fmt(cur)}</text>
+  <text x="${cols[1]}" y="128" text-anchor="middle" font-size="12" font-weight="700" fill="${t.green}">Current Streak</text>
+  <text x="${cols[1]}" y="148" text-anchor="middle" font-size="10" fill="${t.faint}">${range(curFrom, curTo)}</text>
 
   <!-- longest streak -->
-  <text x="${cols[2]}" y="80" text-anchor="middle" font-size="30" font-weight="700" fill="#c9d1d9">${fmt(best)}</text>
-  <text x="${cols[2]}" y="106" text-anchor="middle" font-size="12" fill="#8b949e">Longest Streak</text>
-  <text x="${cols[2]}" y="127" text-anchor="middle" font-size="10" fill="#6e7681">${range(bestFrom, bestTo)}</text>
+  <text x="${cols[2]}" y="80" text-anchor="middle" font-size="30" font-weight="700" fill="${t.num}">${fmt(best)}</text>
+  <text x="${cols[2]}" y="106" text-anchor="middle" font-size="12" fill="${t.label}">Longest Streak</text>
+  <text x="${cols[2]}" y="127" text-anchor="middle" font-size="10" fill="${t.faint}">${range(bestFrom, bestTo)}</text>
 </svg>
 `;
-
-const PATH = "assets/streak.svg";
-const prev = (() => { try { return readFileSync(PATH, "utf8"); } catch { return ""; } })();
-const strip = (s) => s.replace(/<!-- generated.*?-->/, "");
-if (strip(prev) === strip(svg)) {
-  console.log("streak unchanged");
-} else {
-  writeFileSync(PATH, svg);
-  console.log("streak updated:", { total, cur, curRange: range(curFrom, curTo), best, bestRange: range(bestFrom, bestTo) });
 }
+
+const strip = (x) => x.replace(/<!-- generated.*?-->/, "");
+for (const t of Object.values(THEMES)) {
+  const svg = buildSVG(t);
+  const prev = (() => { try { return readFileSync(t.file, "utf8"); } catch { return ""; } })();
+  if (strip(prev) === strip(svg)) { console.log(`${t.file} unchanged`); continue; }
+  writeFileSync(t.file, svg);
+  console.log(`${t.file} updated`);
+}
+console.log("streak:", { total, cur, curRange: range(curFrom, curTo), best, bestRange: range(bestFrom, bestTo) });

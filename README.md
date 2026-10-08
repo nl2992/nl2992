@@ -1,7 +1,11 @@
 <div align="center">
 
 <a href="https://nl2992.github.io/nl2992/" title="Open the interactive terminal">
-  <img src="./assets/banner.svg" width="100%" alt="nl2992, quantitative finance research. Click to open an interactive terminal." />
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nl2992/nl2992/main/assets/banner-light.svg" />
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nl2992/nl2992/main/assets/banner.svg" />
+    <img src="./assets/banner.svg" width="100%" alt="nl2992, quantitative finance research. Click to open an interactive terminal." />
+  </picture>
 </a>
 
 <a href="https://nl2992.github.io/nl2992/"><img src="https://img.shields.io/badge/%E2%96%B6_this_terminal_is_real-click_to_type_in_it-27c93f?style=flat-square&labelColor=0d1117" alt="Open the interactive terminal" /></a>
@@ -39,11 +43,24 @@ Otherwise: on a mountain, or in the kitchen.
 
 <br/>
 
-<img height="155" src="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues,contribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=github_dark&hide_border=true" alt="GitHub statistics" /> <img height="155" src="https://github-stats-extended.vercel.app/api/top-langs/?username=nl2992&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5&layout=compact&langs_count=8&card_width=285&theme=github_dark&hide_border=true" alt="Top languages" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues,contribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=default&hide_border=true" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues,contribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=github_dark&hide_border=true" />
+  <img height="155" src="https://github-stats-extended.vercel.app/api?username=nl2992&hide=issues,contribs&hide_rank=true&show_icons=true&include_all_commits=true&count_private=true&show=prs_reviewed&line_height=28&card_width=285&custom_title=Github%20Statistics&theme=github_dark&hide_border=true" alt="GitHub statistics" />
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=nl2992&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5&layout=compact&langs_count=8&card_width=285&theme=default&hide_border=true" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://github-stats-extended.vercel.app/api/top-langs/?username=nl2992&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5&layout=compact&langs_count=8&card_width=285&theme=github_dark&hide_border=true" />
+  <img height="155" src="https://github-stats-extended.vercel.app/api/top-langs/?username=nl2992&hide=jupyter%20notebook&size_weight=0.5&count_weight=0.5&layout=compact&langs_count=8&card_width=285&theme=github_dark&hide_border=true" alt="Top languages" />
+</picture>
 
 <br/>
 
-<img src="./assets/streak.svg" alt="Contribution streak" />
+<picture>
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/nl2992/nl2992/main/assets/streak-light.svg" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nl2992/nl2992/main/assets/streak.svg" />
+  <img src="./assets/streak.svg" alt="Contribution streak" />
+</picture>
 
 <br/>
 

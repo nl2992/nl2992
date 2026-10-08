@@ -1,0 +1,54 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
+  <!-- generated 2026-10-08 by .github/scripts/gen-banner.mjs -->
+  <defs>
+    <clipPath id="round"><rect x="1" y="1" width="1198" height="298" rx="12"/></clipPath>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1a7f37"/>
+      <stop offset="100%" stop-color="#1a7f37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.015"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <g clip-path="url(#round)">
+    <rect width="1200" height="300" fill="#ffffff"/>
+    <circle cx="1080" cy="20" r="300" fill="url(#glow)" opacity="0.07"/>
+    <rect width="1200" height="150" fill="url(#scan)"/>
+    <rect width="1200" height="40" fill="#f6f8fa"/>
+    <circle cx="26" cy="20" r="6.5" fill="#ff5f56"/>
+    <circle cx="50" cy="20" r="6.5" fill="#ffbd2e"/>
+    <circle cx="74" cy="20" r="6.5" fill="#27c93f"/>
+    <text x="600" y="25" text-anchor="middle" font-size="13" fill="#656d76">nl2992 — zsh — 120×30</text>
+  </g>
+
+  <!-- whoami -->
+  <text x="34" y="78" font-size="17">
+    <tspan fill="#1a7f37">➜</tspan>  <tspan fill="#0969da">~</tspan>  <tspan fill="#1f2328">whoami</tspan>
+  </text>
+  <text x="58" y="108" font-size="21" font-weight="700" fill="#1f2328">nl2992</text>
+  <text x="58" y="130" font-size="12" fill="#8c959f">24 repos · 187 stars · 17 followers</text>
+
+  <!-- stats -->
+  <text x="34" y="164" font-size="17">
+    <tspan fill="#1a7f37">➜</tspan>  <tspan fill="#0969da">~</tspan>  <tspan fill="#1f2328">gh-stats --since=1y</tspan>
+  </text>
+  <text x="58" y="192" font-size="14" fill="#656d76">5,612 contributions · 2,935 commits · 12-day streak</text>
+
+  <!-- stack -->
+  <text x="34" y="224" font-size="17">
+    <tspan fill="#1a7f37">➜</tspan>  <tspan fill="#0969da">~</tspan>  <tspan fill="#1f2328">ls ~/stack</tspan>
+  </text>
+  <g font-size="13" fill="#1a7f37"><rect x="58" y="230" width="77" height="24" rx="5" fill="#f6f8fa" stroke="#d0d7de"/><text x="96.5" y="246" text-anchor="middle">jupyter</text><rect x="143" y="230" width="69" height="24" rx="5" fill="#f6f8fa" stroke="#d0d7de"/><text x="177.5" y="246" text-anchor="middle">python</text><rect x="220" y="230" width="53" height="24" rx="5" fill="#f6f8fa" stroke="#d0d7de"/><text x="246.5" y="246" text-anchor="middle">html</text><rect x="281" y="230" width="45" height="24" rx="5" fill="#f6f8fa" stroke="#d0d7de"/><text x="303.5" y="246" text-anchor="middle">tex</text><rect x="334" y="230" width="45" height="24" rx="5" fill="#f6f8fa" stroke="#d0d7de"/><text x="356.5" y="246" text-anchor="middle">cpp</text></g>
+
+  <!-- prompt + cursor -->
+  <text x="34" y="288" font-size="17">
+    <tspan fill="#1a7f37">➜</tspan>  <tspan fill="#0969da">~</tspan>
+  </text>
+  <rect x="74" y="276" width="9" height="15" fill="#1f2328">
+    <animate attributeName="opacity" values="1;1;0;0" dur="1.06s" repeatCount="indefinite"/>
+  </rect>
+
+  <rect x="1" y="1" width="1198" height="298" rx="12" fill="none" stroke="#d0d7de" stroke-width="1"/>
+</svg>

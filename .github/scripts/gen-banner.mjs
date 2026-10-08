@@ -89,89 +89,109 @@ const langs = scored.slice(0, 5).map((l) => (rename[l.name] || l.name).toLowerCa
 
 const fmt = (n) => n.toLocaleString("en-US");
 
-// ---- build language pills ----
+const statLine = `${fmt(contribs)} contributions · ${fmt(commits)} commits · ${streak}-day streak`;
+const subLine  = `${fmt(repos)} repos · ${fmt(stars)} stars · ${fmt(followers)} followers`;
+const stamp = new Date().toISOString().slice(0, 10);
+
+// Two palettes so the banner looks native on a white page too. GitHub swaps
+// between them with <picture> + prefers-color-scheme (see README).
+const THEMES = {
+  dark: {
+    file: "assets/banner.svg",
+    bg: "#0d1117", bar: "#161b22", border: "#30363d",
+    name: "#e6edf3", cmd: "#c9d1d9", muted: "#8b949e", faint: "#6e7681",
+    green: "#27c93f", pill: "#7ee787", pillBg: "#161b22",
+    cyan: "#56d4dd", cursor: "#c9d1d9",
+    sheen: "#ffffff", sheenOpacity: "0.03", glowOpacity: "0.18",
+  },
+  light: {
+    file: "assets/banner-light.svg",
+    bg: "#ffffff", bar: "#f6f8fa", border: "#d0d7de",
+    name: "#1f2328", cmd: "#1f2328", muted: "#656d76", faint: "#8c959f",
+    green: "#1a7f37", pill: "#1a7f37", pillBg: "#f6f8fa",
+    cyan: "#0969da", cursor: "#1f2328",
+    sheen: "#000000", sheenOpacity: "0.015", glowOpacity: "0.07",
+  },
+};
+
 const CH = 7.8; // approx mono char width at 13px
-let px = 58;
-const pills = langs
-  .map((l) => {
+
+function buildSVG(t) {
+  let px = 58;
+  const pills = langs.map((l) => {
     const w = Math.round(l.length * CH + 22);
-    const rect = `<rect x="${px}" y="230" width="${w}" height="24" rx="5" fill="#161b22" stroke="#30363d"/>`;
+    const rect = `<rect x="${px}" y="230" width="${w}" height="24" rx="5" fill="${t.pillBg}" stroke="${t.border}"/>`;
     const text = `<text x="${px + w / 2}" y="246" text-anchor="middle">${l}</text>`;
     px += w + 8;
     return rect + text;
-  })
-  .join("");
+  }).join("");
 
-const statLine = `${fmt(contribs)} contributions · ${fmt(commits)} commits · ${streak}-day streak`;
-const subLine = `${fmt(repos)} repos · ${fmt(stars)} stars · ${fmt(followers)} followers`;
-const stamp = new Date().toISOString().slice(0, 10);
-
-const svg = `<svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
+  return `<svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg" font-family="'SFMono-Regular','SF Mono',Menlo,Consolas,'Liberation Mono',monospace">
   <!-- generated ${stamp} by .github/scripts/gen-banner.mjs -->
   <defs>
     <clipPath id="round"><rect x="1" y="1" width="1198" height="298" rx="12"/></clipPath>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#27c93f"/>
-      <stop offset="100%" stop-color="#27c93f" stop-opacity="0"/>
+      <stop offset="0%" stop-color="${t.green}"/>
+      <stop offset="100%" stop-color="${t.green}" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.03"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="0%" stop-color="${t.sheen}" stop-opacity="${t.sheenOpacity}"/>
+      <stop offset="100%" stop-color="${t.sheen}" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
   <g clip-path="url(#round)">
-    <rect width="1200" height="300" fill="#0d1117"/>
-    <circle cx="1080" cy="20" r="300" fill="url(#glow)" opacity="0.18"/>
+    <rect width="1200" height="300" fill="${t.bg}"/>
+    <circle cx="1080" cy="20" r="300" fill="url(#glow)" opacity="${t.glowOpacity}"/>
     <rect width="1200" height="150" fill="url(#scan)"/>
-    <rect width="1200" height="40" fill="#161b22"/>
+    <rect width="1200" height="40" fill="${t.bar}"/>
     <circle cx="26" cy="20" r="6.5" fill="#ff5f56"/>
     <circle cx="50" cy="20" r="6.5" fill="#ffbd2e"/>
     <circle cx="74" cy="20" r="6.5" fill="#27c93f"/>
-    <text x="600" y="25" text-anchor="middle" font-size="13" fill="#8b949e">${USER} — zsh — 120×30</text>
+    <text x="600" y="25" text-anchor="middle" font-size="13" fill="${t.muted}">${USER} — zsh — 120×30</text>
   </g>
 
   <!-- whoami -->
   <text x="34" y="78" font-size="17">
-    <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">whoami</tspan>
+    <tspan fill="${t.green}">➜</tspan>  <tspan fill="${t.cyan}">~</tspan>  <tspan fill="${t.cmd}">whoami</tspan>
   </text>
-  <text x="58" y="108" font-size="21" font-weight="700" fill="#e6edf3">${USER}</text>
-  <text x="58" y="130" font-size="12" fill="#6e7681">${subLine}</text>
+  <text x="58" y="108" font-size="21" font-weight="700" fill="${t.name}">${USER}</text>
+  <text x="58" y="130" font-size="12" fill="${t.faint}">${subLine}</text>
 
   <!-- stats -->
   <text x="34" y="164" font-size="17">
-    <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">gh-stats --since=1y</tspan>
+    <tspan fill="${t.green}">➜</tspan>  <tspan fill="${t.cyan}">~</tspan>  <tspan fill="${t.cmd}">gh-stats --since=1y</tspan>
   </text>
-  <text x="58" y="192" font-size="14" fill="#8b949e">${statLine}</text>
+  <text x="58" y="192" font-size="14" fill="${t.muted}">${statLine}</text>
 
   <!-- stack -->
   <text x="34" y="224" font-size="17">
-    <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>  <tspan fill="#c9d1d9">ls ~/stack</tspan>
+    <tspan fill="${t.green}">➜</tspan>  <tspan fill="${t.cyan}">~</tspan>  <tspan fill="${t.cmd}">ls ~/stack</tspan>
   </text>
-  <g font-size="13" fill="#7ee787">${pills}</g>
+  <g font-size="13" fill="${t.pill}">${pills}</g>
 
   <!-- prompt + cursor -->
   <text x="34" y="288" font-size="17">
-    <tspan fill="#27c93f">➜</tspan>  <tspan fill="#56d4dd">~</tspan>
+    <tspan fill="${t.green}">➜</tspan>  <tspan fill="${t.cyan}">~</tspan>
   </text>
-  <rect x="74" y="276" width="9" height="15" fill="#c9d1d9">
+  <rect x="74" y="276" width="9" height="15" fill="${t.cursor}">
     <animate attributeName="opacity" values="1;1;0;0" dur="1.06s" repeatCount="indefinite"/>
   </rect>
 
-  <rect x="1" y="1" width="1198" height="298" rx="12" fill="none" stroke="#30363d" stroke-width="1"/>
+  <rect x="1" y="1" width="1198" height="298" rx="12" fill="none" stroke="${t.border}" stroke-width="1"/>
 </svg>
 `;
-
-const PATH = "assets/banner.svg";
-const prev = (() => { try { return readFileSync(PATH, "utf8"); } catch { return ""; } })();
-// ignore the date-stamp comment when deciding if anything changed
-const strip = (s) => s.replace(/<!-- generated.*?-->/, "");
-if (strip(prev) === strip(svg)) {
-  console.log("banner unchanged");
-} else {
-  writeFileSync(PATH, svg);
-  console.log("banner updated:", { repos, stars, followers, commits, contribs, streak, langs });
 }
+
+const strip = (x) => x.replace(/<!-- generated.*?-->/, "");
+for (const t of Object.values(THEMES)) {
+  const svg = buildSVG(t);
+  const prev = (() => { try { return readFileSync(t.file, "utf8"); } catch { return ""; } })();
+  if (strip(prev) === strip(svg)) { console.log(`${t.file} unchanged`); continue; }
+  writeFileSync(t.file, svg);
+  console.log(`${t.file} updated`);
+}
+console.log("stats:", { repos, stars, followers, commits, contribs, streak, langs });
 
 // ---- stats the REST API can't give the browser (contributions, streak, language bytes) ----
 // consumed by docs/index.html; live repo/star/follower counts are fetched client-side.
