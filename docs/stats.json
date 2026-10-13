@@ -1,59 +1,59 @@
 {
-  "contribs": 5701,
-  "commits": 3290,
-  "streak": 2,
-  "repos": 26,
-  "stars": 188,
+  "contribs": 5703,
+  "commits": 3009,
+  "streak": 3,
+  "repos": 25,
+  "stars": 187,
   "followers": 17,
   "topLangs": [
     {
       "name": "Jupyter Notebook",
       "bytes": 51326008,
       "repos": 11,
-      "share": 48.96
+      "share": 53.98
     },
     {
       "name": "Python",
-      "bytes": 9989164,
-      "repos": 15,
-      "share": 25.22
+      "bytes": 7664930,
+      "repos": 14,
+      "share": 23.53
     },
     {
       "name": "HTML",
-      "bytes": 2855411,
-      "repos": 10,
-      "share": 11.01
-    },
-    {
-      "name": "TypeScript",
-      "bytes": 1064499,
-      "repos": 4,
-      "share": 4.25
+      "bytes": 2679434,
+      "repos": 9,
+      "share": 11.16
     },
     {
       "name": "TeX",
       "bytes": 492707,
       "repos": 6,
-      "share": 3.54
-    },
-    {
-      "name": "JavaScript",
-      "bytes": 178637,
-      "repos": 5,
-      "share": 1.95
+      "share": 3.91
     },
     {
       "name": "C++",
       "bytes": 348728,
       "repos": 2,
-      "share": 1.72
+      "share": 1.9
+    },
+    {
+      "name": "JavaScript",
+      "bytes": 156248,
+      "repos": 4,
+      "share": 1.8
+    },
+    {
+      "name": "TypeScript",
+      "bytes": 145329,
+      "repos": 3,
+      "share": 1.5
     },
     {
       "name": "CSS",
-      "bytes": 177416,
-      "repos": 3,
-      "share": 1.5
+      "bytes": 47147,
+      "repos": 2,
+      "share": 0.7
     }
   ],
-  "generated": "2026-10-13T02:05:28.492Z"
+  "generated": "2026-10-13T09:32:14.901Z"
 }
