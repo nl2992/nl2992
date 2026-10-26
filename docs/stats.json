@@ -1,6 +1,6 @@
 {
-  "contribs": 6086,
-  "commits": 3137,
+  "contribs": 6073,
+  "commits": 3128,
   "streak": 4,
   "repos": 27,
   "stars": 188,
@@ -10,25 +10,25 @@
       "name": "Jupyter Notebook",
       "bytes": 51326008,
       "repos": 11,
-      "share": 50.08
+      "share": 50.04
     },
     {
       "name": "Python",
-      "bytes": 11280169,
+      "bytes": 11335291,
       "repos": 16,
-      "share": 28.31
+      "share": 28.36
     },
     {
       "name": "HTML",
       "bytes": 2679434,
       "repos": 9,
-      "share": 10.35
+      "share": 10.34
     },
     {
       "name": "TeX",
       "bytes": 708605,
       "repos": 6,
-      "share": 4.35
+      "share": 4.34
     },
     {
       "name": "C++",
@@ -40,7 +40,7 @@
       "name": "JavaScript",
       "bytes": 156248,
       "repos": 4,
-      "share": 1.67
+      "share": 1.66
     },
     {
       "name": "TypeScript",
@@ -55,5 +55,5 @@
       "share": 0.65
     }
   ],
-  "generated": "2026-10-25T22:38:02.842Z"
+  "generated": "2026-10-26T01:17:21.808Z"
 }
